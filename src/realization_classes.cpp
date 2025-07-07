@@ -1,4 +1,4 @@
-#include "search_engine.h"
+#include "Search_engine_cmake.h"
 
 int launch() {
     nlohmann::json j{};
@@ -19,11 +19,7 @@ int launch() {
     else fileAnswers.close();;
 }
 
-class ConverterJSON {
-public:
-    ConverterJSON() = default;
-
-    vector<string> GetTextDocuments() {
+    vector<string> ConverterJSON:: GetTextDocuments() {
 
         nlohmann::json j{};
         vector<string> files;
@@ -38,7 +34,7 @@ public:
         return files;
     };
 
-    int GetResponsesLimit() {
+    int ConverterJSON::GetResponsesLimit() {
 
         nlohmann::json j{};
         ifstream file("config.json");
@@ -48,7 +44,7 @@ public:
         return maxResponses;
     };
 
-    vector<string> GetRequests() {
+    vector<string> ConverterJSON:: GetRequests() {
 
         nlohmann::json j{};
         vector<string> requests;
@@ -64,4 +60,3 @@ public:
     };
 
     //void putAnswers()
-};

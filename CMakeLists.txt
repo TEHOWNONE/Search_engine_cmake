@@ -27,10 +27,6 @@ add_subdirectory(src tests)
 
 add_test(NAME testt_Search_engine_cmake COMMAND Search_engine_cmake WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-include(GoogleTest)
-
-gtest_discover_tests(Search_engine_cmake)
-
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Search_engine_cmake PROPERTY CXX_STANDARD 20)
 endif()

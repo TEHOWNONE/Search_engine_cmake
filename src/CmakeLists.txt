@@ -5,3 +5,7 @@ add_executable (Search_engine_cmake main.cpp realization_classes.cpp ${CMAKE_SOU
 target_include_directories (Search_engine_cmake PUBLIC ${CMAKE_SOURCE_DIR}/headers)
 
 target_link_libraries(Search_engine_cmake PRIVATE nlohmann_json::nlohmann_json gtest)
+
+include(GoogleTest)
+
+gtest_discover_tests(Search_engine_cmake)
