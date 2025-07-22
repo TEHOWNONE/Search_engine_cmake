@@ -1,8 +1,9 @@
 #include "Search_engine_cmake.h"
 
-int launch() {
+    int ConverterJSON::launch() {
+
     nlohmann::json j{};
-    fstream fileConfig("config.json");
+    fstream fileConfig("config/config.json");
     fstream fileAnswers("answers.json", ios::out);
 
     try {

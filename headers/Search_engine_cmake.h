@@ -8,10 +8,11 @@
 #include <gtest/gtest.h>
 using namespace std;
 
-int launch();
-
 class ConverterJSON {
 public:
+
+    int launch();
+
     ConverterJSON() = default;
 
     vector<string> GetTextDocuments();

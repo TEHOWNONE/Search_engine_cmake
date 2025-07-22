@@ -2,8 +2,9 @@
 
 int main(int argc, char** argv)
 {
-    launch();
     ConverterJSON converter;
+    converter.launch();
+ 
 };
 //::testing::InitGoogleTest(&argc, argv);
 //return RUN_ALL_TESTS();

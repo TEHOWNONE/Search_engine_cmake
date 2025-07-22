@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.8)
 
-add_executable (Search_engine_cmake main.cpp "Search_engine_cmake.cpp" ${CMAKE_SOURCE_DIR}/headers/Search_engine_cmake.h ${CMAKE_SOURCE_DIR}/tests/test.cpp)
+add_executable (Search_engine_cmake main.cpp Search_engine_cmake.cpp ${CMAKE_SOURCE_DIR}/headers/Search_engine_cmake.h ${CMAKE_SOURCE_DIR}/tests/test.cpp)
 
 target_include_directories (Search_engine_cmake PUBLIC ${CMAKE_SOURCE_DIR}/headers)
 
