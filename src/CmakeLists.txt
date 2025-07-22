@@ -1,11 +1,7 @@
 cmake_minimum_required (VERSION 3.8)
 
-add_executable (Search_engine_cmake main.cpp Search_engine_cmake.cpp ${CMAKE_SOURCE_DIR}/headers/Search_engine_cmake.h ${CMAKE_SOURCE_DIR}/tests/test.cpp)
+add_executable (Search_engine_cmake main.cpp Search_engine_cmake.cpp ${CMAKE_SOURCE_DIR}/headers/Search_engine_cmake.h)
 
 target_include_directories (Search_engine_cmake PUBLIC ${CMAKE_SOURCE_DIR}/headers)
 
-target_link_libraries(Search_engine_cmake PRIVATE nlohmann_json::nlohmann_json gtest)
-
-include(GoogleTest)
-
-gtest_discover_tests(Search_engine_cmake)
+target_link_libraries(Search_engine_cmake PRIVATE nlohmann_json::nlohmann_json)

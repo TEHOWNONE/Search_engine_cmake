@@ -9,23 +9,9 @@ project ("Search_engine_cmake")
 
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 
-include(FetchContent)
+add_subdirectory(nlohmann_json) 
 
-FetchContent_Declare(googletest URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
-
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} googletest/include)
-
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-FetchContent_MakeAvailable(googletest)
-
-enable_testing()
-
-add_subdirectory(nlohmann_json googletest) 
-
-add_subdirectory(src tests)
-
-add_test(NAME testt_Search_engine_cmake COMMAND Search_engine_cmake WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+add_subdirectory(src) 
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET Search_engine_cmake PROPERTY CXX_STANDARD 20)
