@@ -3,8 +3,8 @@
     int ConverterJSON::launch() {
 
     nlohmann::json j{};
-    fstream fileConfig("config/config.json");
-    fstream fileAnswers("answers.json", ios::out);
+    fstream fileConfig("../../../../config/config.json");
+    fstream fileAnswers("../../../../config/answers.json", ios::out);
 
     try {
         if (!fileConfig.is_open()) throw "config file is missing";
@@ -16,7 +16,7 @@
         cout << err_mess;
         return 0;
     }
-    if (!fileAnswers.is_open()) fstream answers("answers.json");
+    if (!fileAnswers.is_open()) fstream answers("../../../../config/answers.json");
     else fileAnswers.close();;
 }
 
@@ -24,7 +24,7 @@
 
         nlohmann::json j{};
         vector<string> files;
-        ifstream file("config.json");
+        ifstream file("../../../../config/config.json");
         file >> j;
         int numberFiles = j["files"].size();
 
@@ -38,7 +38,7 @@
     int ConverterJSON::GetResponsesLimit() {
 
         nlohmann::json j{};
-        ifstream file("config.json");
+        ifstream file("../../../../config/config.json");
         file >> j;
         int maxResponses = j["config"]["max_responses"];
 
@@ -49,7 +49,7 @@
 
         nlohmann::json j{};
         vector<string> requests;
-        ifstream file("requests.json");
+        ifstream file("../../../../config/requests.json");
         file >> j;
         int numberFiles = j["requests"].size();
 
@@ -59,5 +59,4 @@
 
         return requests;
     };
-
     //void putAnswers()
