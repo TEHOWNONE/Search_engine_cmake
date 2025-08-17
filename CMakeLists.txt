@@ -14,3 +14,5 @@ add_subdirectory(nlohmann_json)
 add_subdirectory(src) 
 
 target_link_libraries(Search_engine_cmake PRIVATE nlohmann_json::nlohmann_json)
+
+target_include_directories (Search_engine_cmake PUBLIC ${CMAKE_SOURCE_DIR}/headers)
