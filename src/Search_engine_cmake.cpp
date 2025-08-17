@@ -1,6 +1,6 @@
 #include "Search_engine_cmake.h"
 
-    int ConverterJSON::launch() {
+int ConverterJSON::launch() {
 
     nlohmann::json j{};
     fstream fileConfig("../../../../config/config.json");
@@ -9,16 +9,18 @@
     try {
         if (!fileConfig.is_open()) throw "config file is missing";
         fileConfig >> j;
-        if (j["config"] == nullptr) throw "config file is empty";
-        else cout << j["config"]["name"];
+        if (!j.contains("config")) throw "config file is empty"; //j["config"] == nullptr
+        cout << j["config"]["name"];
     }
     catch (const char* err_mess) {
         cout << err_mess;
         return 0;
     }
     if (!fileAnswers.is_open()) fstream answers("../../../../config/answers.json");
-    else fileAnswers.close();;
-}
+    else fileAnswers.close();
+    fileConfig.close();
+    return 0;
+};
 
     vector<string> ConverterJSON:: GetTextDocuments() {
 
